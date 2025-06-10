@@ -1,0 +1,47 @@
+<!-- 1.	Write Different ways of Adding Style-Sheets -->
+a.	Inline Style Sheet
+<html>
+  <head>
+    <title>Inline CSS</title>
+  </head>
+  <body>
+    <h1 style = "color : green; font-size : 37px; font-family : impact">
+    Stylesheets : The Tool of the Web Design Gods
+  </h1>
+    <p style = "text-indent : 1cm; background : yellow">
+    Amaze your friends! Squash your enemies! </p>
+  </body>
+</html>
+
+
+b.	Internal Style Sheet
+<html>
+  <head>
+    <title>Internal CSS</title>
+    <style>
+      h1 {color : green; font-size : 37px; font-family : impact}
+      p {text-indent : 1cm; background : yellow}
+    </style>
+  </head>
+  <body>
+      <h1> Stylesheets : The Tool of the Web Design Gods </h1>
+      <p> Amaze your friends! Squash your enemies! </p>
+  </body>
+</html>
+
+
+c.	External Style Sheet
+<html>
+  <head>
+    <title>External CSS</title>
+    <link rel="stylesheet" href="mystyle.css">
+      </head>
+  <body>
+      <h1> Stylesheets : The Tool of the Web Design Gods </h1>
+      <p> Amaze your friends! Squash your enemies! </p>
+  </body>
+</html>
+
+Mystyle.css
+  h1 {color : green; font-size : 37px; font-family : impact}
+  p {text-indent : 1cm; background : yellow}
