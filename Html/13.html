@@ -1,0 +1,46 @@
+<!--13.	Write a HTML program which displays the following form -->
+<html>
+    <head>
+    </head>
+    <body>
+      <form action="index.html" method="post">
+          <h2>Your basic info</h2>
+
+         Name<input type="text" id="name" name="student_name">
+         Email<input type="email" id="mail" name="student_email">
+         Password<input type="password" id="password" name="student_password">
+          <br>
+          Age:<input type="radio" id="under_16" value="under_16" name="user_age"><label for="under_16" class="light">Under 16</label>
+          <input type="radio" id="over_16" value="over_16" name="user_age"><label for="over_16" class="light">16 or Older</label>
+
+          <h2>Your profile</h2>
+<label for="courses">Select Courses</label>
+          <select id="courses" name="student_courses">
+            <optgroup label="Engineering">
+              <option value="computer_engineering">Computer Science Engineering</option>
+              <option value="slectrical_engineering">Electrical Engineering</option>
+              <option value="mechanical_engineering">Mechanical Engineering</option>
+              <option value="civil_engineering">Civil Engineering</option>
+              <option value="chemical_engineering">Chemical Engineering</option>
+            </optgroup>
+            <optgroup label="Management">
+              <option value="finance_management">Finance Management</option>
+              <option value="technology_management">Technology Management</option>
+              <option value="marketing_management">Marketing Management</option>
+              <option value="business_administration">Business Administration</option>
+            </optgroup>
+          </select>
+          <br>
+          <label for="bio">Biography</label>
+          <textarea id="bio" name="student_bio"></textarea>
+          <br>
+          <label>Interests:</label>
+          <input type="checkbox" id="engineering" value="interest_engineering" name="user_interest">Engineering
+          <input type="checkbox" id="business" value="interest_business" name="user_interest">Business
+          <input type="checkbox" id="law" value="interest_law" name="user_interest">Law
+
+        <br><input type="submit">
+        <input type="reset">
+      </form>
+    </body>
+</html>
