@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bookstore XML Parser</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .book-card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin: 15px auto;
+      max-width: 600px;
+      transition: transform 0.2s;
+    }
+
+    .book-card:hover {
+      transform: scale(1.02);
+    }
+
+    .title {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #007acc;
+    }
+
+    .info {
+      margin: 8px 0;
+      color: #333;
+    }
+
+    .label {
+      font-weight: bold;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>📚 Bookstore XML Data</h1>
+  <div id="output"></div>
+
+  <script>
+    const xmlData = `<?xml version="1.0" encoding="UTF-8"?>
+    <bookstore>
+        <book category="programming">
+            <title lang="en">Suraj book</title>
+            <author>Suraj</author>
+            <year>2015</year>
+            <price>30.00</price>
+        </book>
+        <book category="programming">
+            <title lang="en">C# Complete Reference</title>
+            <author>balagurusamy</author>
+            <year>2022</year>
+            <price>29.99</price>
+        </book>
+        <book category="web">
+            <title lang="en">XQuery Kick Start</title>
+            <author>James McGovern</author>
+            <author>Per Bothner</author>
+            <author>Kurt Cagle</author>
+            <author>James Linn</author>
+            <author>Vaidyanathan Nagarajan</author>
+            <year>2003</year>
+            <price>49.99</price>
+        </book>
+        <book category="web" cover="paperback">
+            <title lang="en">Learning XML</title>
+            <author>Erik T. Ray</author>
+            <year>2003</year>
+            <price>39.95</price>
+        </book>
+    </bookstore>`;
+
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(xmlData, "text/xml");
+    const books = xmlDoc.getElementsByTagName("book");
+
+    let output = "";
+
+    for (let i = 0; i < books.length; i++) {
+      const title = books[i].getElementsByTagName("title")[0].textContent;
+      const authors = books[i].getElementsByTagName("author");
+      const year = books[i].getElementsByTagName("year")[0].textContent;
+      const price = books[i].getElementsByTagName("price")[0].textContent;
+
+      // Collect all authors
+      let authorList = [];
+      for (let j = 0; j < authors.length; j++) {
+        authorList.push(authors[j].textContent);
+      }
+
+      output += `
+        <div class="book-card">
+          <div class="title">${title}</div>
+          <div class="info"><span class="label">Author${authorList.length > 1 ? 's' : ''}:</span> ${authorList.join(', ')}</div>
+          <div class="info"><span class="label">Year:</span> ${year}</div>
+          <div class="info"><span class="label">Price:</span> $${price}</div>
+        </div>
+      `;
+    }
+
+    document.getElementById("output").innerHTML = output;
+  </script>
+</body>
+</html>

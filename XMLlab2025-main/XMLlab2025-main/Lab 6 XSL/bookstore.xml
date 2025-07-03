@@ -2,8 +2,8 @@
 <?xml-stylesheet href="bookstore.xsl" type="text/xsl"?>
 <bookstore>
     <book category="programming">
-        <title lang="en">Java Complete Reference</title>
-        <author>lan</author>
+        <title lang="en">Suraj book </title>
+        <author>Suraj Thapa</author>
         <year>2015</year>
         <price>30.00</price>
     </book>

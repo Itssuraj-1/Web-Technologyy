@@ -5,7 +5,7 @@
             <body>
                 <h2>Bookstore</h2>
                 <table border="1">
-                    <tr bgcolor="#9acd32">
+                    <tr bgcolor="#add8e6">
                         <th>Title</th>
                         <th>Author</th>
                         <th>Year</th>
