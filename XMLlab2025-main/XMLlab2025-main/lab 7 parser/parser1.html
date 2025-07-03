@@ -7,10 +7,10 @@
   <div id="output"></div>
 
   <script>
-    const xmlData = <?xml version="1.0" encoding="UTF-8"?>
+    const xmlData = `<?xml version="1.0" encoding="UTF-8"?>
     <bookstore>
         <book category="programming">
-            <title lang="en">Suraj book</title>
+            <title lang="en">Suraj Book</title>
             <author>Suraj</author>
             <year>2015</year>
             <price>30.00</price>
@@ -37,7 +37,7 @@
             <year>2003</year>
             <price>39.95</price>
         </book>
-    </bookstore>;
+    </bookstore>`;
 
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(xmlData, "text/xml");
@@ -51,10 +51,10 @@
       const year = books[i].getElementsByTagName("year")[0].textContent;
       const price = books[i].getElementsByTagName("price")[0].textContent;
 
-      output += <p><strong>Title:</strong> ${title}<br>;
-      output += <strong>Author:</strong> ${authors[0].textContent}<br>;  // Shows only first author
-      output += <strong>Year:</strong> ${year}<br>;
-      output += <strong>Price:</strong> $${price}</p>;
+      output += `<p><strong>Title:</strong> ${title}<br>`;
+      output += `<strong>Author:</strong> ${authors[0].textContent}<br>`;  // Shows only first author
+      output += `<strong>Year:</strong> ${year}<br>`;
+      output += `<strong>Price:</strong> $${price}</p>`;
     }
 
     document.getElementById("output").innerHTML = output;
