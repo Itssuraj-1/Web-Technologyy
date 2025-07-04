@@ -1,47 +1,37 @@
-<!-- 1.	Write Different ways of Adding Style-Sheets -->
-a.	Inline Style Sheet
 <html>
-  <head>
-    <title>Inline CSS</title>
-  </head>
-  <body>
-    <h1 style = "color : green; font-size : 37px; font-family : impact">
-    Stylesheets : The Tool of the Web Design Gods
-  </h1>
-    <p style = "text-indent : 1cm; background : yellow">
-    Amaze your friends! Squash your enemies! </p>
-  </body>
+<head>
+  <title>Using Fixed position</title>
+  <style>
+  p.pos_fixed {
+    position: fixed;
+    top: 50px;
+    right: 5px;
+    color: blue;
+  }
+</style>
+</head>
+<body>
+  <p>Computer Fundamentals & Applications</p>
+  <p>Society and Technology</p>
+  <p>English I</p>
+  <p>Mathematics I</p>
+  <p>Digital Logic</p>
+  <p>C Programming</p>
+  <P>Financial Accounting</P>
+  <P>English II</P>
+  <P>Mathematics II</P>
+  <P>Microprocessor and Computer Architecture</P>
+  <P>Data Structures and Algorithms</P>
+  <P>Probability and Statistics</P>
+  <P>System Analysis and Design</P>
+  <P>OOP in Java</P>
+  <P>Web Technology</P>
+  <P>Operating System</P>
+  <P>Numerical Methods</P>
+  <p>Software Engineering</p>
+  <p>Scripting Language</p>
+  <p>Database Management System</p>
+  <p>Project I</p>
+  <p class="pos_fixed">This is the fix positioned text.</p>
+</body>
 </html>
-
-
-b.	Internal Style Sheet
-<html>
-  <head>
-    <title>Internal CSS</title>
-    <style>
-      h1 {color : green; font-size : 37px; font-family : impact}
-      p {text-indent : 1cm; background : yellow}
-    </style>
-  </head>
-  <body>
-      <h1> Stylesheets : The Tool of the Web Design Gods </h1>
-      <p> Amaze your friends! Squash your enemies! </p>
-  </body>
-</html>
-
-
-c.	External Style Sheet
-<html>
-  <head>
-    <title>External CSS</title>
-    <link rel="stylesheet" href="mystyle.css">
-      </head>
-  <body>
-      <h1> Stylesheets : The Tool of the Web Design Gods </h1>
-      <p> Amaze your friends! Squash your enemies! </p>
-  </body>
-</html>
-
-Mystyle.css
-  h1 {color : green; font-size : 37px; font-family : impact}
-  p {text-indent : 1cm; background : yellow}
